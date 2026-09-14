@@ -1,0 +1,1757 @@
+<!doctype html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>fileForge // Modern Node.js CLI</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="./style.css" rel="stylesheet" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body class="page">
+    <header class="header header__header--0ffea4">
+      <div class="header__div--7df0ac">
+        <div class="header__div--8e1d34">
+          <a class="header__a--6b423f" data-path="overview" href="#">
+            <div class="header__div--171050">
+              <span
+                class="header__material_symbols_outlined--a4d458 material-symbols-outlined"
+              >
+                terminal
+              </span>
+            </div>
+            <span class="header__span--475eb1"> fileForge </span>
+          </a>
+          <span class="header__span--f7e05a"> v0.4.2 · oss </span>
+        </div>
+        <nav
+          class="header__nav--f2159c"
+          data-active-classes="text-on-surface bg-surface-container-high rounded px-space-sm py-1 font-headline-sm"
+        >
+          <a
+            aria-current="page"
+            class="header__a--da27f4"
+            data-path="overview"
+            href="#"
+          >
+            Overview
+          </a>
+          <a class="header__a--9a12d2" data-path="features" href="#">
+            Features
+          </a>
+          <a class="header__a--9a12d2" data-path="architecture" href="#">
+            Architecture
+          </a>
+          <a class="header__a--9a12d2" data-path="usage" href="#"> Usage </a>
+          <a class="header__a--9a12d2" data-path="engineering" href="#">
+            Engineering
+          </a>
+        </nav>
+        <div class="header__div--10b7b3">
+          <button
+            aria-label="Toggle color theme"
+            class="header__theme-toggle--e2dbc8"
+            id="theme-toggle"
+            type="button"
+          >
+            <span
+              class="header__theme-toggle-icon--83e9b2 material-symbols-outlined"
+              id="theme-toggle-icon"
+            >
+              dark_mode
+            </span>
+          </button>
+          <a
+            class="header__a--ab20fc"
+            href="https://github.com"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <span
+              class="header__material_symbols_outlined--6e9fd9 material-symbols-outlined"
+            >
+              code
+            </span>
+            <span class="header__span--b15492"> ★ 480+ </span>
+          </a>
+          <a
+            class="header__a--6a70c3"
+            href="https://npmjs.com"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <span
+              class="header__material_symbols_outlined--a39c64 material-symbols-outlined"
+            >
+              deployed_code
+            </span>
+            <span> npm </span>
+          </a>
+          <button
+            aria-label="Toggle Navigation Menu"
+            class="header__mobile-menu-btn--a5e7da"
+            id="mobile-menu-btn"
+            type="button"
+          >
+            <span
+              class="header__material_symbols_outlined--bed2d8 material-symbols-outlined"
+            >
+              menu
+            </span>
+          </button>
+          <!-- <div class="header__div--6cd772">
+            <span
+              class="header__material_symbols_outlined--cbc40d material-symbols-outlined"
+            >
+              person
+            </span>
+          </div> -->
+        </div>
+      </div>
+      <div class="header__mobile-drawer--c8edf3" id="mobile-drawer">
+        <div class="header__div--cfb9cf">
+          <a class="header__a--c29f9b" data-path="overview" href="#">
+            Overview
+          </a>
+          <a class="header__a--c29f9b" data-path="features" href="#">
+            Features
+          </a>
+          <a class="header__a--c29f9b" data-path="architecture" href="#">
+            Architecture
+          </a>
+          <a class="header__a--c29f9b" data-path="usage" href="#"> Usage </a>
+          <a class="header__a--c29f9b" data-path="engineering" href="#">
+            Engineering
+          </a>
+        </div>
+        <div class="header__div--fe7b3b">
+          <a
+            class="header__a--2684cb"
+            href="https://github.com"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <span
+              class="header__material_symbols_outlined--6e9fd9 material-symbols-outlined"
+            >
+              code
+            </span>
+            <span class="header__span--b15492"> ★ 480+ </span>
+          </a>
+          <a
+            class="header__a--f27c31"
+            href="https://npmjs.com"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <span
+              class="header__material_symbols_outlined--a39c64 material-symbols-outlined"
+            >
+              deployed_code
+            </span>
+            <span> npm </span>
+          </a>
+        </div>
+      </div>
+    </header>
+    <main class="page page__main--1c9517">
+      <div class="page__div--8f0233">
+        <!-- Top Notification / Status Rule -->
+        <div class="page__div--cbe6e1">
+          <div class="page__div--1ad998">
+            <div class="page__div--8e1d34">
+              <span class="page__span--8b54de">
+                <span class="page__span--60dc39"> </span>
+                v0.4.2 Production Ready
+              </span>
+              <span class="page__span--08ee7a"> | </span>
+              <span class="page__span--d253cd">
+                Engineered for Node.js 18.x LTS &amp; 20+
+              </span>
+            </div>
+            <div class="page__div--541985">
+              <span class="page__span--562b5b">
+                Zero heavy runtime dependencies
+              </span>
+              <span class="page__span--de2671"> · </span>
+              <a class="page__a--09db59" href="#engineering">
+                Read Engineering Case Study →
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- HERO SECTION: Masterful Editorial Split Layout -->
+        <section class="hero hero__section--cc99bd">
+          <!-- Subtle architectural background grid -->
+          <div class="hero__div--b48c17"></div>
+          <div class="hero__div--5bf62e">
+            <!-- Narrative Left Column (5 Cols) -->
+            <div class="hero__div--85d948">
+              <!-- Metadata Pill -->
+              <div class="hero__div--e39ee4">
+                <span class="hero__span--890e2e"> </span>
+                <span> Node.js · CLI · Open Source · Cross-platform </span>
+              </div>
+              <!-- Hero Typography -->
+              <h1 class="hero__h1--ddfe45">
+                fileForge
+                <span class="hero__span--e3d4ac"> _ </span>
+              </h1>
+              <p class="hero__p--cb44ca">
+                A developer-focused CLI for working with your filesystem.
+              </p>
+              <p class="hero__p--ddc971">
+                A cross-platform Node.js command-line tool for common filesystem
+                operations, designed with an extensible command architecture,
+                strict argument tokenization, and isolated filesystem
+                abstractions.
+              </p>
+              <!-- Command Strip & Actions -->
+              <div class="hero__div--49866a">
+                <!-- Terminal Copy Pill -->
+                <div class="hero__div--c530bd">
+                  <div class="hero__div--53384a">
+                    <span class="hero__span--d70652"> $ </span>
+                    <span class="hero__hero-npm-cmd--f4ab3b" id="hero-npm-cmd">
+                      npm i -g fileforge
+                    </span>
+                  </div>
+                  <button
+                    class="hero__button--1beba3"
+                    data-action="copySnippet('npm i -g fileforge', this)"
+                    title="Copy to clipboard"
+                    type="button"
+                  >
+                    <span class="btn-text"> Copy </span>
+                  </button>
+                </div>
+                <!-- Secondary Links -->
+                <a
+                  class="hero__a--e954b2"
+                  href="https://github.com"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <span
+                    class="hero__material_symbols_outlined--83e9b2 material-symbols-outlined"
+                  >
+                    terminal
+                  </span>
+                  <span> View on GitHub </span>
+                </a>
+                <a class="hero__a--f1cdbb" href="#specification">
+                  <span> Specs &amp; Flags ↓ </span>
+                </a>
+              </div>
+              <!-- Telemetry Metadata List -->
+              <div class="hero__div--4b0ddd">
+                <div class="hero__div--4f6429">
+                  <span class="hero__span--3f3faf"> Cold Start </span>
+                  <span class="hero__span--4ba57c"> 38 ms </span>
+                </div>
+                <div class="hero__div--4f6429">
+                  <span class="hero__span--3f3faf"> Test Coverage </span>
+                  <span class="hero__span--f8ec34"> 98.4% </span>
+                </div>
+                <div class="hero__div--4f6429">
+                  <span class="hero__span--3f3faf"> Package Footprint </span>
+                  <span class="hero__span--2dc5b5"> 41.2 KB </span>
+                </div>
+              </div>
+            </div>
+            <!-- Hero Visual Terminal (7 Cols) -->
+            <div class="hero__div--f7684e">
+              <div class="hero__div--2445c7">
+                <!-- Terminal Chrome Window Bar -->
+                <div class="hero__div--ca761b">
+                  <div class="hero__div--ed667f">
+                    <span class="hero__span--32444b"> </span>
+                    <span class="hero__span--8e030f"> </span>
+                    <span class="hero__span--9392f8"> </span>
+                    <span class="hero__span--af1d86">
+                      bash — fileforge --help — 80×24
+                    </span>
+                  </div>
+                  <button
+                    class="hero__button--4270ee"
+                    data-action="copySnippet('fileforge --help', this)"
+                    type="button"
+                  >
+                    <span class="btn-text"> Copy </span>
+                  </button>
+                </div>
+                <!-- Terminal Content Canvas -->
+                <pre
+                  class="hero__pre--4fa5a4"
+                ><code><span class="hero__span--31ce2c">$</span> <span class="hero__span--ae6cfd">fileforge</span> <span class="hero__span--b15492">--help</span>
+
+<span class="hero__span--5dcc67">Usage: fileforge [command] [options] &lt;arguments...&gt;</span>
+
+<span class="hero__span--927a3f">Common Filesystem Operations Engine</span>
+
+<span class="hero__span--d53b2d">Commands:</span>
+  <span class="hero__span--f85f26">ls</span>     [path]           <span class="hero__span--5dcc67">List directory contents with metadata flags</span>
+  <span class="hero__span--f85f26">cp</span>     &lt;src&gt; &lt;dest&gt;     <span class="hero__span--5dcc67">Copy files or directories with recursive &amp; overwrite guards</span>
+  <span class="hero__span--f85f26">mv</span>     &lt;src&gt; &lt;dest&gt;     <span class="hero__span--5dcc67">Move or rename files or directories atomically</span>
+  <span class="hero__span--f85f26">mkdir</span>  &lt;path&gt;           <span class="hero__span--5dcc67">Create single or nested directories with automatic parent resolution</span>
+  <span class="hero__span--f85f26">rm</span>     &lt;target&gt;         <span class="hero__span--5dcc67">Remove files or directories with safety dry-run capability</span>
+
+<span class="hero__span--d53b2d">Global Options:</span>
+  <span class="hero__span--b15492">-v, --version</span>           <span class="hero__span--5dcc67">Print fileForge release telemetry and exit</span>
+  <span class="hero__span--b15492">-h, --help</span>              <span class="hero__span--5dcc67">Display structured contextual help documentation</span>
+  <span class="hero__span--b15492">--dry-run</span>               <span class="hero__span--5dcc67">Simulate execution without modifying local filesystem state</span>
+  <span class="hero__span--b15492">--json</span>                  <span class="hero__span--5dcc67">Serialize stdout payload into deterministic JSON format</span>
+  <span class="hero__span--b15492">--silent</span>                <span class="hero__span--5dcc67">Suppress informative logging, returning POSIX exit codes only</span>
+
+<span class="hero__span--927a3f">Examples:</span>
+  <span class="hero__span--5dcc67">$ fileforge ls -la ./packages</span>
+  <span class="hero__span--5dcc67">$ fileforge mkdir -p ./dist/artifacts/bundles</span>
+  <span class="hero__span--5dcc67">$ fileforge cp config.json ./dist/config.json --no-clobber</span></code></pre>
+                <!-- Interactive Terminal Status Footer -->
+                <div class="hero__div--962ad9">
+                  <span class="hero__div--ed667f">
+                    <span class="hero__span--b50967"> </span>
+                    <span> POSIX Environment Active </span>
+                  </span>
+                  <span class="hero__span--a7a651"> exit status: 0 </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 01 / MOTIVATION & PROBLEM SPACE -->
+        <section class="motivation motivation__section--d24dde">
+          <div class="motivation__div--c3b990">
+            <div class="motivation__div--4a376a">
+              <span class="motivation__span--df5a91">
+                01 / MOTIVATION &amp; PROBLEM SPACE
+              </span>
+              <h2 class="motivation__h2--518fed">
+                Why build another filesystem CLI?
+              </h2>
+              <p class="motivation__p--9ca26a">
+                Shell scripts are brittle across developer workstations. When
+                writing multi-platform automation, teams face stark
+                inconsistencies between BSD utilities on macOS, GNU coreutils on
+                Linux, and PowerShell or cmd.exe under Windows.
+              </p>
+            </div>
+            <!-- Narrative Analysis -->
+            <div class="motivation__div--ec25c1">
+              <div class="motivation__div--4782cb">
+                <h3 class="motivation__h3--6a0243">
+                  Beyond naive shell wrappers
+                </h3>
+                <p class="motivation__p--a3abcc">
+                  Most custom scripts rely on ad-hoc
+                  <code class="motivation__code--c496b7">
+                    child_process.exec()
+                  </code>
+                  calls that wrap standard shell binaries. This pattern creates
+                  security vulnerabilities through command injection, breaks
+                  when OS distributions omit flags like
+                  <code class="motivation__code--c496b7"> -r </code>
+                  or
+                  <code class="motivation__code--c496b7"> -P </code>
+                  , and fails to offer structured telemetry.
+                </p>
+                <p class="motivation__p--a3abcc">
+                  <strong class="motivation__strong--ece002">
+                    fileForge
+                  </strong>
+                  was architected as an exploration in clean systems
+                  engineering. Built strictly on top of Node.js
+                  <code class="motivation__code--b53cfd">
+                    node:fs/promises
+                  </code>
+                  and
+                  <code class="motivation__code--b53cfd"> node:path </code>
+                  , it establishes isolated compilation boundaries between
+                  command line input tokenization, semantic schema validation,
+                  and native platform I/O.
+                </p>
+              </div>
+              <!-- Side Callout / Code Metric -->
+              <div class="motivation__div--8cdf54">
+                <div>
+                  <span class="motivation__span--3cb651"> Core Tenet </span>
+                  <h4 class="motivation__h4--4d7d33">
+                    Deterministic I/O Safety
+                  </h4>
+                  <p class="motivation__p--cd21dd">
+                    Every write, move, and recursive deletion is bounded by an
+                    pre-flight stat checks. When an error occurs, the process
+                    emits typed error contracts rather than terminating in
+                    unstructured stacktrace leaks.
+                  </p>
+                </div>
+                <div class="motivation__div--350083">
+                  <span class="motivation__span--de2671">
+                    // Runtime footprint constraint
+                  </span>
+                  <br />
+                  <span class="motivation__span--31ce2c">
+                    node_modules size:
+                  </span>
+                  <span class="motivation__span--b15492">
+                    0 external deps
+                  </span>
+                  <br />
+                  <span class="motivation__span--31ce2c"> engine target: </span>
+                  <span class="motivation__span--a72b02"> &gt;= v18.17.0 </span>
+                </div>
+              </div>
+            </div>
+            <!-- 3-Pillar Breakdown -->
+            <div class="motivation__div--69286f">
+              <div class="motivation__div--fe166d">
+                <div class="motivation__div--98f4be">
+                  <span
+                    class="motivation__material_symbols_outlined--bed2d8 material-symbols-outlined"
+                  >
+                    account_tree
+                  </span>
+                </div>
+                <span class="motivation__span--3f8eee"> Pillar 01 </span>
+                <h4 class="motivation__h3--6a0243">
+                  Decoupled Command Lifecycle
+                </h4>
+                <p class="motivation__p--cd21dd">
+                  Lexical argument tokenization, option casting, and validation
+                  are decoupled from command execution. Commands are declarative
+                  objects with discrete lifecycles.
+                </p>
+              </div>
+              <div class="motivation__div--fe166d">
+                <div class="motivation__div--35e5c4">
+                  <span
+                    class="motivation__material_symbols_outlined--bed2d8 material-symbols-outlined"
+                  >
+                    swap_horiz
+                  </span>
+                </div>
+                <span class="motivation__span--3f8eee"> Pillar 02 </span>
+                <h4 class="motivation__h3--6a0243">
+                  Filesystem Layer Abstraction
+                </h4>
+                <p class="motivation__p--cd21dd">
+                  All paths pass through an active
+                  <code class="motivation__code--9cd0bc"> FSAdapter </code>
+                  that normalizes Windows backslashes, resolves relative
+                  directory bounds, and permits unit-test mocking.
+                </p>
+              </div>
+              <div class="motivation__div--fe166d">
+                <div class="motivation__div--6a6059">
+                  <span
+                    class="motivation__material_symbols_outlined--bed2d8 material-symbols-outlined"
+                  >
+                    format_image_left
+                  </span>
+                </div>
+                <span class="motivation__span--3f8eee"> Pillar 03 </span>
+                <h4 class="motivation__h3--6a0243">
+                  Predictable Failure Modes
+                </h4>
+                <p class="motivation__p--cd21dd">
+                  OS-level permission faults (
+                  <code class="motivation__code--9cd0bc"> EACCES </code>
+                  ), missing nodes (
+                  <code class="motivation__code--9cd0bc"> ENOENT </code>
+                  ), or collision states are mapped into deterministic,
+                  human-readable exit diagnostics.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 02 / COMMAND SPECIFICATION (Technical Documentation Grid) -->
+        <section
+          class="specification specification__specification--91c7f6"
+          id="specification"
+        >
+          <div class="specification__div--c3b990">
+            <div class="specification__div--4a376a">
+              <span class="specification__span--df5a91">
+                02 / COMMAND SPECIFICATION
+              </span>
+              <h2 class="specification__h2--518fed">
+                Currently Implemented Commands
+              </h2>
+              <p class="specification__p--0ce305">
+                fileForge ships with core POSIX-familiar filesystem primitives
+                implemented natively in modern Node.js.
+              </p>
+            </div>
+            <!-- Specification Cards Grid -->
+            <div class="specification__div--918f54">
+              <!-- Command: ls -->
+              <div class="specification__div--4d2d3c">
+                <div>
+                  <div class="specification__div--22c60d">
+                    <div class="specification__div--8e1d34">
+                      <span class="specification__span--31cc24"> ls </span>
+                      <span class="specification__span--3f8eee">
+                        List Directory Content
+                      </span>
+                    </div>
+                    <span class="specification__span--dd16e6"> STABLE </span>
+                  </div>
+                  <p class="specification__p--f9182a">
+                    Scans target directory, aggregates detailed filesystem stat
+                    metadata (POSIX permissions string, numeric UID/GID,
+                    formatted byte sizes, and timestamps).
+                  </p>
+                  <!-- Flags breakdown -->
+                  <div class="specification__div--4d929d">
+                    <div class="specification__div--3d39b4">
+                      <span class="specification__span--b15492">
+                        -a, --all
+                      </span>
+                      <span class="specification__span--5cadc2">
+                        Include hidden files matching
+                        <code class="specification__code--9cd0bc"> .* </code>
+                      </span>
+                    </div>
+                    <div class="specification__div--3d39b4">
+                      <span class="specification__span--b15492">
+                        -l, --long
+                      </span>
+                      <span class="specification__span--5cadc2">
+                        Emit tabular metadata representation
+                      </span>
+                    </div>
+                    <div class="specification__div--3d39b4">
+                      <span class="specification__span--b15492">
+                        -h, --human
+                      </span>
+                      <span class="specification__span--5cadc2">
+                        Display byte values in base-2 units (KB, MB, GB)
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="specification__div--bd9d71">
+                  <code class="specification__code--9cd0bc">
+                    fileforge ls -a -l ./src
+                  </code>
+                  <button
+                    class="specification__button--543548"
+                    data-action="copySnippet('fileforge ls -a -l ./src', this)"
+                    type="button"
+                  >
+                    <span class="btn-text"> Copy </span>
+                  </button>
+                </div>
+              </div>
+              <!-- Command: cp -->
+              <div class="specification__div--4d2d3c">
+                <div>
+                  <div class="specification__div--22c60d">
+                    <div class="specification__div--8e1d34">
+                      <span class="specification__span--31cc24"> cp </span>
+                      <span class="specification__span--3f8eee">
+                        Copy Files &amp; Trees
+                      </span>
+                    </div>
+                    <span class="specification__span--dd16e6"> STABLE </span>
+                  </div>
+                  <p class="specification__p--f9182a">
+                    Transfers files or complete recursive subtrees using
+                    high-throughput pipeline streams, with safety guards to
+                    avert unintended file clobbering.
+                  </p>
+                  <!-- Flags breakdown -->
+                  <div class="specification__div--4d929d">
+                    <div class="specification__div--3d39b4">
+                      <span class="specification__span--b15492">
+                        -r, -R, --recursive
+                      </span>
+                      <span class="specification__span--5cadc2">
+                        Copy directories recursively
+                      </span>
+                    </div>
+                    <div class="specification__div--3d39b4">
+                      <span class="specification__span--b15492">
+                        -n, --no-clobber
+                      </span>
+                      <span class="specification__span--5cadc2">
+                        Never overwrite existing destination file
+                      </span>
+                    </div>
+                    <div class="specification__div--3d39b4">
+                      <span class="specification__span--b15492">
+                        -f, --force
+                      </span>
+                      <span class="specification__span--5cadc2">
+                        Force overwrite unlinking read-only descriptors
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="specification__div--bd9d71">
+                  <code class="specification__code--9cd0bc">
+                    fileforge cp source.txt projects/source.txt
+                  </code>
+                  <button
+                    class="specification__button--543548"
+                    data-action="copySnippet('fileforge cp source.txt projects/source.txt', this)"
+                    type="button"
+                  >
+                    <span class="btn-text"> Copy </span>
+                  </button>
+                </div>
+              </div>
+              <!-- Command: mv -->
+              <div class="specification__div--4d2d3c">
+                <div>
+                  <div class="specification__div--22c60d">
+                    <div class="specification__div--8e1d34">
+                      <span class="specification__span--31cc24"> mv </span>
+                      <span class="specification__span--3f8eee">
+                        Move &amp; Rename Atomic
+                      </span>
+                    </div>
+                    <span class="specification__span--dd16e6"> STABLE </span>
+                  </div>
+                  <p class="specification__p--f9182a">
+                    Performs atomic inode rename operations across compatible
+                    device mounts, with automatic fallback to streaming
+                    copy-and-unlink on cross-device boundary transitions (
+                    <code class="specification__code--9cd0bc"> EXDEV </code>
+                    ).
+                  </p>
+                  <!-- Flags breakdown -->
+                  <div class="specification__div--4d929d">
+                    <div class="specification__div--3d39b4">
+                      <span class="specification__span--b15492">
+                        -n, --no-clobber
+                      </span>
+                      <span class="specification__span--5cadc2">
+                        Abort transaction if destination file exists
+                      </span>
+                    </div>
+                    <div class="specification__div--3d39b4">
+                      <span class="specification__span--b15492">
+                        -v, --verbose
+                      </span>
+                      <span class="specification__span--5cadc2">
+                        Emit detailed atomic stage lifecycle confirmations
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="specification__div--bd9d71">
+                  <code class="specification__code--9cd0bc">
+                    fileforge mv old.txt new.txt
+                  </code>
+                  <button
+                    class="specification__button--543548"
+                    data-action="copySnippet('fileforge mv old.txt new.txt', this)"
+                    type="button"
+                  >
+                    <span class="btn-text"> Copy </span>
+                  </button>
+                </div>
+              </div>
+              <!-- Command: mkdir -->
+              <div class="specification__div--4d2d3c">
+                <div>
+                  <div class="specification__div--22c60d">
+                    <div class="specification__div--8e1d34">
+                      <span class="specification__span--31cc24"> mkdir </span>
+                      <span class="specification__span--3f8eee">
+                        Directory Creation
+                      </span>
+                    </div>
+                    <span class="specification__span--dd16e6"> STABLE </span>
+                  </div>
+                  <p class="specification__p--f9182a">
+                    Creates directory leaves or arbitrary recursive trees.
+                    Automatically handles ancestor resolution and validates
+                    target path read/write privileges before initiating
+                    filesystem mutations.
+                  </p>
+                  <!-- Flags breakdown -->
+                  <div class="specification__div--4d929d">
+                    <div class="specification__div--3d39b4">
+                      <span class="specification__span--b15492">
+                        -p, --parents
+                      </span>
+                      <span class="specification__span--5cadc2">
+                        Make parent directories without throwing if present
+                      </span>
+                    </div>
+                    <div class="specification__div--3d39b4">
+                      <span class="specification__span--b15492">
+                        -m, --mode &lt;octal&gt;
+                      </span>
+                      <span class="specification__span--5cadc2">
+                        Specify POSIX file permissions mode (default: 0755)
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="specification__div--bd9d71">
+                  <code class="specification__code--9cd0bc">
+                    fileforge mkdir -p projects/api/v1
+                  </code>
+                  <button
+                    class="specification__button--543548"
+                    data-action="copySnippet('fileforge mkdir -p projects/api/v1', this)"
+                    type="button"
+                  >
+                    <span class="btn-text"> Copy </span>
+                  </button>
+                </div>
+              </div>
+              <!-- Command: rm (Full width card on bottom) -->
+              <div class="specification__div--878701">
+                <div>
+                  <div class="specification__div--22c60d">
+                    <div class="specification__div--8e1d34">
+                      <span class="specification__span--31cc24"> rm </span>
+                      <span class="specification__span--3f8eee">
+                        Safe Node Removal
+                      </span>
+                    </div>
+                    <div class="specification__div--53384a">
+                      <span class="specification__span--74bd56">
+                        DRY-RUN READY
+                      </span>
+                      <span class="specification__span--dd16e6"> STABLE </span>
+                    </div>
+                  </div>
+                  <p class="specification__p--f9182a">
+                    Unlinks files or deletes nested recursive hierarchies.
+                    Features mandatory dry-run verification mode to preview
+                    paths marked for deletion prior to actual disk unlinking.
+                  </p>
+                  <div class="specification__div--c595fd">
+                    <div class="specification__div--3d39b4">
+                      <span class="specification__span--b15492">
+                        -r, -R, --recursive
+                      </span>
+                      <span class="specification__span--5cadc2">
+                        Recursively remove hierarchies
+                      </span>
+                    </div>
+                    <div class="specification__div--3d39b4">
+                      <span class="specification__span--b15492">
+                        -f, --force
+                      </span>
+                      <span class="specification__span--5cadc2">
+                        Ignore nonexistent files &amp; prompt overrides
+                      </span>
+                    </div>
+                    <div class="specification__div--3d39b4">
+                      <span class="specification__span--31ce2c">
+                        --dry-run
+                      </span>
+                      <span class="specification__span--5cadc2">
+                        Output targets without disk unlinking
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="specification__div--bd9d71">
+                  <code class="specification__code--9cd0bc">
+                    fileforge rm --dry-run unwanted.txt
+                  </code>
+                  <button
+                    class="specification__button--543548"
+                    data-action="copySnippet('fileforge rm --dry-run unwanted.txt', this)"
+                    type="button"
+                  >
+                    <span class="btn-text"> Copy </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 03 / WORKFLOW DEMO (Authentic Live Terminal Sequence) -->
+        <section class="workflow workflow__section--d24dde">
+          <div class="workflow__div--c3b990">
+            <div class="workflow__div--4a376a">
+              <span class="workflow__span--df5a91"> 03 / WORKFLOW DEMO </span>
+              <h2 class="workflow__h2--518fed">
+                Predictable execution in your daily shell
+              </h2>
+              <p class="workflow__p--0ce305">
+                Observe a realistic workflow sequence: directory indexing, path
+                creation, file copying, atomic renaming, and safe node purging.
+              </p>
+            </div>
+            <!-- Large Authentic Terminal -->
+            <div class="workflow__div--df1262">
+              <!-- Terminal Header -->
+              <div class="workflow__div--77a0e5">
+                <div class="workflow__div--53384a">
+                  <span class="workflow__span--32444b"> </span>
+                  <span class="workflow__span--8e030f"> </span>
+                  <span class="workflow__span--9392f8"> </span>
+                  <span class="workflow__span--ecf5f0">
+                    zsh — ~/workspace/monorepo — 94×30
+                  </span>
+                </div>
+                <button
+                  class="workflow__button--526c9b"
+                  data-action="copySnippet(document.getElementById('full-workflow-text').innerText, this)"
+                  type="button"
+                >
+                  <span
+                    class="workflow__material_symbols_outlined--6e9fd9 material-symbols-outlined"
+                  >
+                    content_copy
+                  </span>
+                  <span class="workflow__btn_text--91043d btn-text">
+                    Copy Session
+                  </span>
+                </button>
+              </div>
+              <!-- Terminal Body -->
+              <div class="workflow__div--52c00a">
+                <pre
+                  class="workflow__full-workflow-text--3a7000"
+                  id="full-workflow-text"
+                ><code><span class="workflow__span--31ce2c">$</span> <span class="workflow__span--7c9a7f">fileforge ls</span>
+<span class="workflow__span--220ef3">drwxr-xr-x</span>  dev  staff   160B  packages/
+<span class="workflow__span--de2671">-rw-r--r--</span>  dev  staff   1.2K  package.json
+<span class="workflow__span--de2671">-rw-r--r--</span>  dev  staff   428B  README.md
+
+<span class="workflow__span--31ce2c">$</span> <span class="workflow__span--7c9a7f">fileforge mkdir src/core/handlers</span>
+<span class="workflow__span--b15492">✓</span> Created directory 'src/core/handlers' (recursive)
+
+<span class="workflow__span--31ce2c">$</span> <span class="workflow__span--7c9a7f">fileforge cp config.example.json src/core/handlers/config.json</span>
+<span class="workflow__span--b15492">✓</span> Copied 'config.example.json' → 'src/core/handlers/config.json' (1.4 KB)
+
+<span class="workflow__span--31ce2c">$</span> <span class="workflow__span--7c9a7f">fileforge mv temp.log archive/2025-05.log</span>
+<span class="workflow__span--b15492">✓</span> Moved 'temp.log' → 'archive/2025-05.log'
+
+<span class="workflow__span--31ce2c">$</span> <span class="workflow__span--7c9a7f">fileforge rm src/core/handlers/legacy.bak</span>
+<span class="workflow__span--b15492">✓</span> Removed 'src/core/handlers/legacy.bak'</code></pre>
+              </div>
+              <!-- Terminal Status Metadata Footer -->
+              <div class="workflow__div--ad0c76">
+                <div class="workflow__div--541985">
+                  <span> Encoding: UTF-8 </span>
+                  <span> Line Separator: LF </span>
+                  <span> V8 Heap: 14.2 MB </span>
+                </div>
+                <div class="workflow__div--8e1d34">
+                  <span class="workflow__span--806f3b">
+                    ALL TASKS EXECUTED (0 ERRORS)
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 04 / SYSTEM ARCHITECTURE (Visual Flow & Lifecycle) -->
+        <section
+          class="architecture architecture__architecture--91c7f6"
+          id="architecture"
+        >
+          <div class="architecture__div--c3b990">
+            <div class="architecture__div--4a376a">
+              <span class="architecture__span--df5a91">
+                04 / SYSTEM ARCHITECTURE
+              </span>
+              <h2 class="architecture__h2--518fed">
+                From Keystroke to Disk I/O
+              </h2>
+              <p class="architecture__p--0ce305">
+                A decoupled pipeline ensures zero side effects take place until
+                all tokenization, registration queries, and boundary checks pass
+                successfully.
+              </p>
+            </div>
+            <!-- Architecture Pipeline Diagram -->
+            <div class="architecture__div--eba105">
+              <!-- Pipeline Horizontal Flow (Collapsible on mobile) -->
+              <div class="architecture__div--e38f7f">
+                <!-- Node 1 -->
+                <div class="architecture__div--709f67">
+                  <div class="architecture__div--22c60d">
+                    <span class="architecture__span--c971eb"> 01. INGEST </span>
+                    <span
+                      class="architecture__material_symbols_outlined--1aa97a material-symbols-outlined"
+                    >
+                      keyboard
+                    </span>
+                  </div>
+                  <div>
+                    <h4 class="architecture__h4--40531c">CLI Input</h4>
+                    <p class="architecture__p--34af35">
+                      Raw
+                      <code class="architecture__code--9cd0bc">
+                        process.argv
+                      </code>
+                      slicing and pre-normalization
+                    </p>
+                  </div>
+                  <span class="architecture__span--85d86f">
+                    argv[] strings
+                  </span>
+                </div>
+                <!-- Node 2 -->
+                <div class="architecture__div--709f67">
+                  <div class="architecture__div--22c60d">
+                    <span class="architecture__span--c971eb">
+                      02. TOKENIZE
+                    </span>
+                    <span
+                      class="architecture__material_symbols_outlined--d0dcb8 material-symbols-outlined"
+                    >
+                      alt_route
+                    </span>
+                  </div>
+                  <div>
+                    <h4 class="architecture__h4--40531c">Flag Parser</h4>
+                    <p class="architecture__p--34af35">
+                      POSIX shorthand expansion, type coercion, validations
+                    </p>
+                  </div>
+                  <span class="architecture__span--85d86f">
+                    ParsedOptions AST
+                  </span>
+                </div>
+                <!-- Node 3 -->
+                <div class="architecture__div--709f67">
+                  <div class="architecture__div--22c60d">
+                    <span class="architecture__span--c971eb">
+                      03. RESOLVE
+                    </span>
+                    <span
+                      class="architecture__material_symbols_outlined--d9a0d7 material-symbols-outlined"
+                    >
+                      hub
+                    </span>
+                  </div>
+                  <div>
+                    <h4 class="architecture__h4--40531c">Registry</h4>
+                    <p class="architecture__p--34af35">
+                      O(1) Map match for registered action handlers
+                    </p>
+                  </div>
+                  <span class="architecture__span--85d86f">
+                    CommandDefinition
+                  </span>
+                </div>
+                <!-- Node 4 -->
+                <div class="architecture__div--709f67">
+                  <div class="architecture__div--22c60d">
+                    <span class="architecture__span--c971eb">
+                      04. DISPATCH
+                    </span>
+                    <span
+                      class="architecture__material_symbols_outlined--1aa97a material-symbols-outlined"
+                    >
+                      rule
+                    </span>
+                  </div>
+                  <div>
+                    <h4 class="architecture__h4--40531c">Controller</h4>
+                    <p class="architecture__p--34af35">
+                      Middleware stack, dry-run gate, output interceptor
+                    </p>
+                  </div>
+                  <span class="architecture__span--85d86f">
+                    ExecutionContext
+                  </span>
+                </div>
+                <!-- Node 5 -->
+                <div class="architecture__div--709f67">
+                  <div class="architecture__div--22c60d">
+                    <span class="architecture__span--c971eb"> 05. ADAPT </span>
+                    <span
+                      class="architecture__material_symbols_outlined--d0dcb8 material-symbols-outlined"
+                    >
+                      layers
+                    </span>
+                  </div>
+                  <div>
+                    <h4 class="architecture__h4--40531c">FSAdapter</h4>
+                    <p class="architecture__p--34af35">
+                      Path normalization, POSIX vs win32 root resolution
+                    </p>
+                  </div>
+                  <span class="architecture__span--85d86f">
+                    NormalizedPaths
+                  </span>
+                </div>
+                <!-- Node 6 -->
+                <div class="architecture__div--709f67">
+                  <div class="architecture__div--22c60d">
+                    <span class="architecture__span--2e6bc3">
+                      06. EXECUTE
+                    </span>
+                    <span
+                      class="architecture__material_symbols_outlined--d9a0d7 material-symbols-outlined"
+                    >
+                      memory
+                    </span>
+                  </div>
+                  <div>
+                    <h4 class="architecture__h4--40531c">Node.js Engine</h4>
+                    <p class="architecture__p--34af35">
+                      Native asynchronous libuv threadpool disk operations
+                    </p>
+                  </div>
+                  <span class="architecture__span--85d86f">
+                    node:fs/promises
+                  </span>
+                </div>
+              </div>
+              <!-- Separation of Concerns Details -->
+              <div class="architecture__div--046519">
+                <div class="architecture__div--5da130">
+                  <div class="architecture__div--53384a">
+                    <span class="architecture__span--2dc5b5">
+                      Command Definitions
+                    </span>
+                  </div>
+                  <p class="architecture__p--cd21dd">
+                    Every command is declared in its own isolated module file
+                    exporting metadata, flag configuration, argument
+                    constraints, and an asynchronous run function.
+                  </p>
+                </div>
+                <div class="architecture__div--5da130">
+                  <div class="architecture__div--53384a">
+                    <span class="architecture__span--f8ec34">
+                      FS Layer Mocking
+                    </span>
+                  </div>
+                  <p class="architecture__p--cd21dd">
+                    Because commands only interface with the
+                    <code class="architecture__code--9cd0bc"> FSAdapter </code>
+                    interface, end-to-end integration tests execute against
+                    in-memory virtual disks without touching local disks.
+                  </p>
+                </div>
+                <div class="architecture__div--5da130">
+                  <div class="architecture__div--53384a">
+                    <span class="architecture__span--4ba57c">
+                      Output Formatters
+                    </span>
+                  </div>
+                  <p class="architecture__p--cd21dd">
+                    Execution results are decoupled from presentation. The
+                    runner pipes command outputs to human-friendly ANSI terminal
+                    renderers or machine-readable JSON pipelines.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 05 / GETTING STARTED (Split Layout Quick Start) -->
+        <section class="getting-started getting-started__section--d24dde">
+          <div class="getting-started__div--c3b990">
+            <div class="getting-started__div--4a376a">
+              <span class="getting-started__span--df5a91">
+                05 / GETTING STARTED
+              </span>
+              <h2 class="getting-started__h2--518fed">
+                Install in seconds via npm
+              </h2>
+              <p class="getting-started__p--0ce305">
+                Run directly using
+                <code class="getting-started__code--5dcf40"> npx </code>
+                or link globally into your system path.
+              </p>
+            </div>
+            <!-- Quick Start Dual Split -->
+            <div class="getting-started__div--c9f4a7">
+              <!-- Left: Sequential Commands (7 Cols) -->
+              <div class="getting-started__div--c6bf53">
+                <!-- Step 1: Install -->
+                <div class="getting-started__div--5da130">
+                  <div class="getting-started__div--22c60d">
+                    <span class="getting-started__span--15af58">
+                      Step 01 // Installation
+                    </span>
+                    <span class="getting-started__span--dd16e6">
+                      Recommended
+                    </span>
+                  </div>
+                  <h4 class="getting-started__h4--6a0243">
+                    Install package globally
+                  </h4>
+                  <div class="getting-started__div--cc4bbb">
+                    <code class="getting-started__code--9cd0bc">
+                      npm install -g fileforge
+                    </code>
+                    <button
+                      class="getting-started__button--543548"
+                      data-action="copySnippet('npm install -g fileforge', this)"
+                      type="button"
+                    >
+                      <span class="btn-text"> Copy </span>
+                    </button>
+                  </div>
+                </div>
+                <!-- Step 2: Instant invocation with npx -->
+                <div class="getting-started__div--5da130">
+                  <div class="getting-started__div--22c60d">
+                    <span class="getting-started__span--3f8eee">
+                      Step 02 // Zero-Install Alternative
+                    </span>
+                    <span class="getting-started__span--2e8056">
+                      Ephemeral
+                    </span>
+                  </div>
+                  <h4 class="getting-started__h4--6a0243">
+                    Run directly via npx
+                  </h4>
+                  <div class="getting-started__div--cc4bbb">
+                    <code class="getting-started__code--9cd0bc">
+                      npx fileforge ls -la
+                    </code>
+                    <button
+                      class="getting-started__button--543548"
+                      data-action="copySnippet('npx fileforge ls -la', this)"
+                      type="button"
+                    >
+                      <span class="btn-text"> Copy </span>
+                    </button>
+                  </div>
+                </div>
+                <!-- Step 3: Verify binary integrity -->
+                <div class="getting-started__div--5da130">
+                  <div class="getting-started__div--22c60d">
+                    <span class="getting-started__span--3f8eee">
+                      Step 03 // Telemetry Check
+                    </span>
+                    <span class="getting-started__span--2e8056">
+                      Diagnostics
+                    </span>
+                  </div>
+                  <h4 class="getting-started__h4--6a0243">
+                    Confirm active build &amp; node runtime
+                  </h4>
+                  <div class="getting-started__div--cc4bbb">
+                    <code class="getting-started__code--9cd0bc">
+                      fileforge -v
+                    </code>
+                    <button
+                      class="getting-started__button--543548"
+                      data-action="copySnippet('fileforge -v', this)"
+                      type="button"
+                    >
+                      <span class="btn-text"> Copy </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Right: What happens under the hood (5 Cols) -->
+              <div class="getting-started__div--bca5c8">
+                <h3 class="getting-started__h4--6a0243">Under the Hood</h3>
+                <div class="getting-started__div--9fd71a">
+                  <div class="getting-started__div--2aae25">
+                    <span
+                      class="getting-started__material_symbols_outlined--b12b62 material-symbols-outlined"
+                    >
+                      link
+                    </span>
+                    <div>
+                      <strong class="getting-started__strong--31f2c2">
+                        Global Bin Symlinking
+                      </strong>
+                      <p>
+                        The package manifest configures
+                        <code class="getting-started__code--5dcf40">
+                          "bin": { "fileforge": "./bin/cli.js" }
+                        </code>
+                        , symlinking the executable directly into your global
+                        Node environment prefix.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="getting-started__div--2aae25">
+                    <span
+                      class="getting-started__material_symbols_outlined--b12b62 material-symbols-outlined"
+                    >
+                      verified_user
+                    </span>
+                    <div>
+                      <strong class="getting-started__strong--31f2c2">
+                        Binary Shebang Sanitization
+                      </strong>
+                      <p>
+                        Features an explicit
+                        <code class="getting-started__code--5dcf40">
+                          #!/usr/bin/env node
+                        </code>
+                        header with UTF-8 byte order mark omission to prevent
+                        parsing errors under strict Unix environments.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="getting-started__div--2aae25">
+                    <span
+                      class="getting-started__material_symbols_outlined--b12b62 material-symbols-outlined"
+                    >
+                      speed
+                    </span>
+                    <div>
+                      <strong class="getting-started__strong--31f2c2">
+                        Sub-50ms Cold Execution
+                      </strong>
+                      <p>
+                        Modules load lazily on-demand. When running
+                        <code class="getting-started__code--9cd0bc">
+                          fileforge ls
+                        </code>
+                        , the recursive copy and deletion engines are never
+                        evaluated into V8 memory.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="getting-started__div--09849b">
+                  Verified on macOS Sonoma, Ubuntu 22.04 LTS, and Windows 11
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 06 / ENGINEERING CASE STUDY ('Built to be extended') -->
+        <section
+          class="engineering engineering__engineering--91c7f6"
+          id="engineering"
+        >
+          <div class="engineering__div--c3b990">
+            <div class="engineering__div--4a376a">
+              <span class="engineering__span--df5a91">
+                06 / ENGINEERING CASE STUDY
+              </span>
+              <h2 class="engineering__h2--518fed">
+                Built to be extended: Core Architectural Decisions
+              </h2>
+              <p class="engineering__p--0ce305">
+                An in-depth look into the architectural trade-offs, modular
+                design patterns, and engineering choices that define the
+                fileForge core.
+              </p>
+            </div>
+            <!-- 6 Technical Deep Dive Cards -->
+            <div class="engineering__div--993260">
+              <!-- Decision 1 -->
+              <div class="engineering__div--6ada54">
+                <div>
+                  <span class="engineering__span--3f8eee"> Decision 01 </span>
+                  <h4 class="engineering__h4--1714e2">
+                    Independent Command Definitions
+                  </h4>
+                  <p class="engineering__p--f118b0">
+                    Every command implements a strict TypeScript contract
+                    specifying positional arguments, expected flags, usage
+                    schemas, and a discrete
+                    <code class="engineering__code--9cd0bc"> execute() </code>
+                    method. No command possesses ambient state or cross-command
+                    dependencies.
+                  </p>
+                </div>
+                <div class="engineering__div--5716ca">
+                  Interface:
+                  <code class="engineering__code--a72b02">
+                    ICommandDefinition&lt;T&gt;
+                  </code>
+                </div>
+              </div>
+              <!-- Decision 2 -->
+              <div class="engineering__div--6ada54">
+                <div>
+                  <span class="engineering__span--3f8eee"> Decision 02 </span>
+                  <h4 class="engineering__h4--1714e2">
+                    Central Command Registry
+                  </h4>
+                  <p class="engineering__p--f118b0">
+                    Commands register into an immutable registry via declarative
+                    keys. This decoupling makes it trivial to mount custom
+                    plugins or third-party extensions in future releases without
+                    modifying core runner logic.
+                  </p>
+                </div>
+                <div class="engineering__div--5716ca">
+                  Pattern:
+                  <code class="engineering__code--a72b02">
+                    Registry.register(cmd)
+                  </code>
+                </div>
+              </div>
+              <!-- Decision 3 -->
+              <div class="engineering__div--6ada54">
+                <div>
+                  <span class="engineering__span--3f8eee"> Decision 03 </span>
+                  <h4 class="engineering__h4--1714e2">
+                    Strict Argument Tokenization
+                  </h4>
+                  <p class="engineering__p--f118b0">
+                    Arguments and flags are validated against command schemas
+                    before execution starts. Unrecognized flags trigger
+                    immediate validation rejections with suggested alternatives,
+                    preventing dangerous partial mutations.
+                  </p>
+                </div>
+                <div class="engineering__div--5716ca">
+                  Safety:
+                  <code class="engineering__code--a72b02">
+                    Zero Early Side-Effects
+                  </code>
+                </div>
+              </div>
+              <!-- Decision 4 -->
+              <div class="engineering__div--6ada54">
+                <div>
+                  <span class="engineering__span--3f8eee"> Decision 04 </span>
+                  <h4 class="engineering__h4--1714e2">
+                    Filesystem Layer Abstraction
+                  </h4>
+                  <p class="engineering__p--f118b0">
+                    Direct invocations of Node.js
+                    <code class="engineering__code--9cd0bc"> fs </code>
+                    are isolated to a single adapter layer. Path strings are
+                    validated for traversal vulnerabilities (
+                    <code class="engineering__code--9cd0bc"> ../.. </code>
+                    ) and normalized across operating systems automatically.
+                  </p>
+                </div>
+                <div class="engineering__div--5716ca">
+                  Abstraction:
+                  <code class="engineering__code--a72b02">
+                    FSAdapter / VirtualFS
+                  </code>
+                </div>
+              </div>
+              <!-- Decision 5 -->
+              <div class="engineering__div--6ada54">
+                <div>
+                  <span class="engineering__span--3f8eee"> Decision 05 </span>
+                  <h4 class="engineering__h4--1714e2">Typed Error Hierarchy</h4>
+                  <p class="engineering__p--f118b0">
+                    Raw POSIX system errors (
+                    <code class="engineering__code--9cd0bc"> ENOENT </code>
+                    ,
+                    <code class="engineering__code--9cd0bc"> EEXIST </code>
+                    ,
+                    <code class="engineering__code--9cd0bc"> EACCES </code>
+                    ) are intercepted and translated into typed
+                    <code class="engineering__code--9cd0bc">
+                      FileForgeError
+                    </code>
+                    instances containing actionable remediation advice.
+                  </p>
+                </div>
+                <div class="engineering__div--5716ca">
+                  Diagnostics:
+                  <code class="engineering__code--a72b02">
+                    Clean CLI Exits
+                  </code>
+                </div>
+              </div>
+              <!-- Decision 6 -->
+              <div class="engineering__div--6ada54">
+                <div>
+                  <span class="engineering__span--3f8eee"> Decision 06 </span>
+                  <h4 class="engineering__h4--1714e2">
+                    Zero Heavy Dependencies
+                  </h4>
+                  <p class="engineering__p--f118b0">
+                    By deliberate design, fileForge rejects heavy external
+                    dependencies. Command parsing, colors, and directory
+                    traversing utilize pure built-in Node.js primitives,
+                    guaranteeing instant CLI startup times.
+                  </p>
+                </div>
+                <div class="engineering__div--5716ca">
+                  Performance:
+                  <code class="engineering__code--a72b02">
+                    &lt; 45ms Boot Time
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 07 / STATUS & ROADMAP (Side-by-Side Comparison Tracks) -->
+        <section class="status status__section--d24dde">
+          <div class="status__div--c3b990">
+            <div class="status__div--f82f63">
+              <div class="status__div--15da4c">
+                <span class="status__span--df5a91">
+                  07 / STATUS &amp; ROADMAP
+                </span>
+                <h2 class="status__h2--518fed">Engineering Milestones</h2>
+                <p class="status__p--0ce305">
+                  Clear tracking of current production capabilities versus
+                  upcoming planned releases.
+                </p>
+              </div>
+              <div class="status__div--771804">
+                <span class="status__span--890e2e"> </span>
+                <span> Active Development · v0.4.2 </span>
+              </div>
+            </div>
+            <!-- Two Side-by-Side Comparison Tracks -->
+            <div class="status__div--52d105">
+              <!-- Track 1: Implemented -->
+              <div class="status__div--d91567">
+                <div class="status__div--15938c">
+                  <h3 class="status__h3--6a0243">Implemented (Core V1)</h3>
+                  <span class="status__span--3d4aca"> Ready </span>
+                </div>
+                <ul class="status__ul--c8702b">
+                  <li class="status__li--f7de3c">
+                    <span
+                      class="status__material_symbols_outlined--efee0d material-symbols-outlined"
+                    >
+                      check_circle
+                    </span>
+                    <span>
+                      <strong> Core Primitives: </strong>
+                      Native implementations of
+                      <code class="status__code--9cd0bc"> ls </code>
+                      ,
+                      <code class="status__code--9cd0bc"> cp </code>
+                      ,
+                      <code class="status__code--9cd0bc"> mv </code>
+                      ,
+                      <code class="status__code--9cd0bc"> mkdir </code>
+                      , and
+                      <code class="status__code--9cd0bc"> rm </code>
+                      .
+                    </span>
+                  </li>
+                  <li class="status__li--f7de3c">
+                    <span
+                      class="status__material_symbols_outlined--efee0d material-symbols-outlined"
+                    >
+                      check_circle
+                    </span>
+                    <span>
+                      <strong> POSIX Parsing Engine: </strong>
+                      Combined flag clustering (
+                      <code class="status__code--9cd0bc"> -la </code>
+                      ), long flags (
+                      <code class="status__code--9cd0bc"> --all </code>
+                      ), and value assignment.
+                    </span>
+                  </li>
+                  <li class="status__li--f7de3c">
+                    <span
+                      class="status__material_symbols_outlined--efee0d material-symbols-outlined"
+                    >
+                      check_circle
+                    </span>
+                    <span>
+                      <strong> Path Normalization: </strong>
+                      Cross-platform path resolution ensuring consistent
+                      behavior across Windows and Unix platforms.
+                    </span>
+                  </li>
+                  <li class="status__li--f7de3c">
+                    <span
+                      class="status__material_symbols_outlined--efee0d material-symbols-outlined"
+                    >
+                      check_circle
+                    </span>
+                    <span>
+                      <strong> Comprehensive Unit Harness: </strong>
+                      98.4% test coverage using Node.js native test runner and
+                      mock filesystem adapters.
+                    </span>
+                  </li>
+                  <li class="status__li--f7de3c">
+                    <span
+                      class="status__material_symbols_outlined--efee0d material-symbols-outlined"
+                    >
+                      check_circle
+                    </span>
+                    <span>
+                      <strong> Safe Dry-Run Subsystem: </strong>
+                      Non-destructive execution previews via global
+                      <code class="status__code--9cd0bc"> --dry-run </code>
+                      flag.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <!-- Track 2: Upcoming Milestones -->
+              <div class="status__div--f903a5">
+                <div class="status__div--15938c">
+                  <h3 class="status__h3--6a0243">Planned Milestones</h3>
+                  <span class="status__span--5b1cb2"> Roadmap </span>
+                </div>
+                <ul class="status__ul--c8702b">
+                  <li class="status__li--f7de3c">
+                    <span
+                      class="status__material_symbols_outlined--cd03f9 material-symbols-outlined"
+                    >
+                      pending
+                    </span>
+                    <span>
+                      <strong> Grep &amp; Stream Search Utility: </strong>
+                      High-performance regex file content search utilizing
+                      backpressure-aware Node.js streams.
+                    </span>
+                  </li>
+                  <li class="status__li--f7de3c">
+                    <span
+                      class="status__material_symbols_outlined--cd03f9 material-symbols-outlined"
+                    >
+                      pending
+                    </span>
+                    <span>
+                      <strong> Cryptographic Checksum Diffing: </strong>
+                      Instant directory comparison powered by native SHA-256
+                      stream hashing.
+                    </span>
+                  </li>
+                  <li class="status__li--f7de3c">
+                    <span
+                      class="status__material_symbols_outlined--cd03f9 material-symbols-outlined"
+                    >
+                      pending
+                    </span>
+                    <span>
+                      <strong> Interactive Confirmation TUI: </strong>
+                      Optional prompt mode for destructive operations when
+                      running in interactive TTY sessions.
+                    </span>
+                  </li>
+                  <li class="status__li--f7de3c">
+                    <span
+                      class="status__material_symbols_outlined--cd03f9 material-symbols-outlined"
+                    >
+                      pending
+                    </span>
+                    <span>
+                      <strong> Extensible Plugin Loader: </strong>
+                      Dynamic runtime registration of community command modules
+                      via
+                      <code class="status__code--9cd0bc"> .fileforgerc </code>
+                      .
+                    </span>
+                  </li>
+                  <li class="status__li--f7de3c">
+                    <span
+                      class="status__material_symbols_outlined--cd03f9 material-symbols-outlined"
+                    >
+                      pending
+                    </span>
+                    <span>
+                      <strong> Glob Pattern Matching: </strong>
+                      Native glob expansion support across all positional
+                      arguments without shell expansion dependency.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 08 / PROJECT RESOURCES & DOCUMENTATION -->
+        <section class="documentation documentation__section--91c7f6">
+          <div class="documentation__div--c3b990">
+            <div class="documentation__div--4a376a">
+              <span class="documentation__span--df5a91">
+                08 / PROJECT RESOURCES
+              </span>
+              <h2 class="documentation__h2--518fed">
+                Documentation &amp; Source
+              </h2>
+              <p class="documentation__p--0ce305">
+                Access repositories, architectural RFCs, release telemetry, and
+                contributing guidelines.
+              </p>
+            </div>
+            <!-- Resource Link Cards -->
+            <div class="documentation__div--2f0963">
+              <!-- Link 1 -->
+              <a
+                class="documentation__a--a0bf30 group"
+                href="https://github.com"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <div class="documentation__div--27959a">
+                  <div class="documentation__div--8a3276">
+                    <span
+                      class="documentation__material_symbols_outlined--83e9b2 material-symbols-outlined"
+                    >
+                      code
+                    </span>
+                  </div>
+                  <h4 class="documentation__h4--f49230 group-hover-target">
+                    GitHub Repository
+                  </h4>
+                  <p class="documentation__p--0696c5">
+                    Source code, pull requests, issue tracker, and architecture
+                    RFCs.
+                  </p>
+                </div>
+                <span class="documentation__span--3b08fd">
+                  <span> github.com/fileforge </span>
+                  <span
+                    class="documentation__material_symbols_outlined--49917a material-symbols-outlined"
+                  >
+                    arrow_outward
+                  </span>
+                </span>
+              </a>
+              <!-- Link 2 -->
+              <a
+                class="documentation__a--a0bf30 group"
+                href="https://npmjs.com"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <div class="documentation__div--27959a">
+                  <div class="documentation__div--8a3276">
+                    <span
+                      class="documentation__material_symbols_outlined--83e9b2 material-symbols-outlined"
+                    >
+                      deployed_code
+                    </span>
+                  </div>
+                  <h4 class="documentation__h4--f49230 group-hover-target">
+                    npm Registry
+                  </h4>
+                  <p class="documentation__p--0696c5">
+                    Package releases, checksums, tarball distribution, and
+                    version histories.
+                  </p>
+                </div>
+                <span class="documentation__span--3b08fd">
+                  <span> npmjs.com/package/fileforge </span>
+                  <span
+                    class="documentation__material_symbols_outlined--49917a material-symbols-outlined"
+                  >
+                    arrow_outward
+                  </span>
+                </span>
+              </a>
+              <!-- Link 3 -->
+              <a class="documentation__a--a0bf30 group" href="#specification">
+                <div class="documentation__div--27959a">
+                  <div class="documentation__div--8a3276">
+                    <span
+                      class="documentation__material_symbols_outlined--83e9b2 material-symbols-outlined"
+                    >
+                      menu_book
+                    </span>
+                  </div>
+                  <h4 class="documentation__h4--f49230 group-hover-target">
+                    Technical Specs
+                  </h4>
+                  <p class="documentation__p--0696c5">
+                    Command flag references, POSIX compatibility tables, and
+                    exit code indices.
+                  </p>
+                </div>
+                <span class="documentation__span--3b08fd">
+                  <span> Read Specifications </span>
+                  <span
+                    class="documentation__material_symbols_outlined--49917a material-symbols-outlined"
+                  >
+                    south
+                  </span>
+                </span>
+              </a>
+              <!-- Link 4 -->
+              <a class="documentation__a--a0bf30 group" href="#engineering">
+                <div class="documentation__div--27959a">
+                  <div class="documentation__div--8a3276">
+                    <span
+                      class="documentation__material_symbols_outlined--83e9b2 material-symbols-outlined"
+                    >
+                      architecture
+                    </span>
+                  </div>
+                  <h4 class="documentation__h4--f49230 group-hover-target">
+                    Engineering Notes
+                  </h4>
+                  <p class="documentation__p--0696c5">
+                    Reflections on building high-performance CLI tools in
+                    TypeScript &amp; Node.js.
+                  </p>
+                </div>
+                <span class="documentation__span--3b08fd">
+                  <span> Explore Architecture </span>
+                  <span
+                    class="documentation__material_symbols_outlined--49917a material-symbols-outlined"
+                  >
+                    north_east
+                  </span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
+        <!-- Interactive Clipboard Script -->
+      </div>
+    </main>
+    <footer class="footer footer__footer--2be310">
+      <div class="footer__div--258f74">
+        <div class="footer__div--27959a">
+          <div class="footer__div--8e1d34">
+            <span class="footer__span--c8c60a"> fileForge </span>
+            <span class="footer__span--e78b1d"> CLI Node.js Core </span>
+          </div>
+          <p class="footer__p--0696c5">
+            A zero-dependency, AST-driven scaffolding tool for enterprise
+            repository orchestrations.
+          </p>
+        </div>
+        <div class="footer__div--ad4988">
+          <a class="footer__a--6c5fe9" data-path="architecture" href="#">
+            Architecture Spec
+          </a>
+          <a
+            class="footer__a--6c5fe9"
+            href="https://github.com"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Source Code
+          </a>
+          <a
+            class="footer__a--6c5fe9"
+            href="https://npmjs.com"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Registry (npm)
+          </a>
+          <a class="footer__a--6c5fe9" data-path="license" href="#">
+            MIT License
+          </a>
+        </div>
+      </div>
+      <div class="footer__div--c6a9d6">
+        <p>
+          © 2025 fileForge Contributors. Architectural telemetry licensed under
+          MIT.
+        </p>
+        <p class="footer__p--8e3efe">v0.4.2 // sha256:7f01c8</p>
+      </div>
+    </footer>
+  </body>
+</html>
